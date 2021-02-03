@@ -1,17 +1,41 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <div id="app">
+      <Header @onClickMenu="handelClickMenu"/>
+    </div>
+
+    <sui-divider />
+    
+    <div>
+      <Content/>
+    </div>
+
+    <div>
+      <Footer/>
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Content from './components/main/Content.vue'
+import Header from './components/main/Header.vue'
+import Footer from './components/main/Footer.vue'
 
 export default {
   name: 'App',
-  components: {
-    HelloWorld
+  components:{
+    Content,
+    Header,
+    Footer,
+  },
+  methods:{
+    handelClickMenu:function(menuName){
+      switch(menuName){
+        case 'signUp':
+          //해당 page route
+          break;
+      }
+    }
   }
 }
 </script>
@@ -21,8 +45,6 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 </style>
