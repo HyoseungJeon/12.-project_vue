@@ -1,7 +1,6 @@
 <template>
   <div>
       <product-list-page/>
-      //product router view
   </div>
 </template>
 

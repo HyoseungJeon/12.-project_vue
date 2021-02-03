@@ -5,11 +5,7 @@
     </div>
 
     <sui-divider />
-    
-    <div>
-      <Content/>
-    </div>
-
+    <product-content> router view</product-content>
     <div>
       <Footer/>
     </div>
@@ -17,16 +13,16 @@
 </template>
 
 <script>
-import Content from './components/main/Content.vue'
 import Header from './components/main/Header.vue'
 import Footer from './components/main/Footer.vue'
+import ProductContent from './components/main/content/ProductContent.vue'
 
 export default {
   name: 'App',
   components:{
-    Content,
     Header,
     Footer,
+    ProductContent
   },
   methods:{
     handelClickMenu:function(menuName){
