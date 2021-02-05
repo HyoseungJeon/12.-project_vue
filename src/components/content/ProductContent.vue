@@ -1,6 +1,6 @@
 <template>
   <div>
-      <router-view></router-view>
+      <router-view @handleClickEvent="handelClickMenu"></router-view>
   </div>
 </template>
 
@@ -8,21 +8,29 @@
 export default {
   name:'product-content',
   components: {  },
+  data :function(){
+    return{
+      product_id:'',
+    }
+  },
   methods:{
-    handelClickMenu:function(menuName){
+    handelClickMenu:function(menuName, par1){
       switch(menuName){
         case 'home':
           this.$router.push({name : 'home'})
           break;
-        case 'sign-up-try':{
-          //회원가입 로직
-          let status = true;
-          
-          
-
-          if(status){
-            this.$router.push({name : 'home'})
-          }
+        case 'product_click':{
+          this.product_id = par1;
+          this.$router.push({name : 'product-detail'})
+          break;
+        }
+        case 'product_buy' :{
+          this.$router.push({name : 'product-order'})
+          break;
+        }
+        case 'product_order':{
+          //주문 logic
+          this.$router.push({name : 'home'})
           break;
         }
       }

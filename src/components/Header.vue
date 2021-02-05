@@ -2,12 +2,13 @@
   <div id="header_form">
     <headerPage @onClickMenu="handelClickMenu"/>
     <signInModal id="signIn_form" @onSignInModalStatus="handleSignInModal" v-bind="propsObj"/>
+
   </div>
 </template>
 
 // logo, 검색창, 장바구니, 회원 정보, 로그인, 회원가입, 로그아웃
 <script>
-import HeaderPage from './pages/HeaderPage.vue'
+import {HeaderPage} from './pages'
 import SignInModal from './pages/SignInModal.vue';
 export default {
   name : 'Header',
@@ -42,6 +43,10 @@ export default {
           break;
         case 'member-info':
           this.$router.push({name : 'member-info'})
+          break;
+        case 'product-search':
+          //prop로 검색어 전달
+          this.$router.push({name : 'product-list', })
           break;
       }
       this.$emit('onClickMenu',menuName)

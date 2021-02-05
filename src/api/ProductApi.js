@@ -1,12 +1,12 @@
 import AxiosClient from "./AxiosClient";
 
-class ClubApi {
+class ProductApi {
     constructor(){
-        this.client = new AxiosClient('/api/club');
+        this.client = new AxiosClient('/api/order');
     }
 
-    async register(club) {
-        return this.client.post('/register', club);
+    async register(member) {
+        return this.client.post('/register', member);
     }
 
     async findClub(clubId) {
@@ -25,6 +25,6 @@ class ClubApi {
     }
 }
 
-const instance = new ClubApi();
+const instance = new ProductApi();
 
 export default instance;

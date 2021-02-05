@@ -11,7 +11,9 @@
       <div id=search_form class="ui left icon action input" >
         <i class="search icon"></i>
         <input type="text" placeholder=" 찾고 싶은 상품명을 입력해주세요!" />
-        <div class="ui blue submit button">검색</div>
+        <div class="ui blue submit button"
+        @click="handelClickMenu('product-search')"
+        >검색</div>
       </div>
       <!-- <img src='@/assets/images/icon_cart.png' width="50" height="40">
       <img src='@/assets/images/icon_myinfo.png' width="50" height="40"> -->
@@ -46,7 +48,7 @@ export default {
   margin-right: 5%;
 }
 #menu_form{
-  margin-top: 5px;
+  margin-top: 10px;
   text-align: right;
   font-size: 9px;
 }

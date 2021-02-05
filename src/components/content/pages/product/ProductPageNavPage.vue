@@ -1,6 +1,6 @@
 <template>
   <div id="main-form">
-      상품 페이지 네비게이션 PAGE
+      <b-pagination-nav  :number-of-pages="10" align="center" size="lg"></b-pagination-nav>
   </div>
 </template>
 
@@ -13,5 +13,7 @@ export default {
 <style>
     #main-form{
         text-align: center;
+        align-content: center;
+        padding-bottom: 15px;
     }
 </style>

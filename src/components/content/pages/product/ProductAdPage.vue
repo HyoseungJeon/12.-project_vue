@@ -23,8 +23,8 @@ export default {
     name: 'product-ad-page',
     data: function(){
         return{
-            images: ['http://localhost:8100/img/ad_1.bbc59a40.png', 'http://localhost:8100/img/ad_2.b7eda2af.png', 'http://localhost:8100/img/ad_3.eefea796.png'],
-            //images: ['http://i.imgur.com/vYdoAKu.jpg', 'http://i.imgur.com/PUD9HQL.jpg', 'http://i.imgur.com/Lfv18Sb.jpg', 'http://i.imgur.com/tmVJtna.jpg', 'http://i.imgur.com/ZfFAkWZ.jpg'],
+            //images: ['http://localhost:8100/img/ad_1.bbc59a40.png', 'http://localhost:8100/img/ad_2.b7eda2af.png', 'http://localhost:8100/img/ad_3.eefea796.png'],
+            images: ['http://i.imgur.com/vYdoAKu.jpg', 'http://i.imgur.com/PUD9HQL.jpg', 'http://i.imgur.com/Lfv18Sb.jpg', 'http://i.imgur.com/tmVJtna.jpg', 'http://i.imgur.com/ZfFAkWZ.jpg'],
             //@/assets/images/H_icon.png
             currentNumber: 0,
             timer: null

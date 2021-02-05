@@ -3,10 +3,7 @@
     <div id="app">
       <Header @onClickMenu="handelClickMenu"/>
     </div>
-
-    <!-- <sui-divider /> -->
-    <router-view id="content-form"></router-view>
-
+    <Content/>
     <div>
       <Footer/>
     </div>
@@ -14,13 +11,16 @@
 </template>
 
 <script>
-import Header from './components/Header.vue'
-import Footer from './components/Footer.vue'
+import './components'
+import {Header} from './components'
+import {Content} from './components'
+import {Footer} from './components'
 
 export default {
   name: 'App',
   components:{
     Header,
+    Content,
     Footer,
   },
   methods:{

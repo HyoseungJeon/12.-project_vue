@@ -6,7 +6,7 @@
 
 //회사소개, 고객센터 tab, 회사 정보
 <script>
-import FooterPage from './pages/FooterPage.vue'
+import {FooterPage} from './pages'
 export default {
   components: { FooterPage },
     name : 'Footer',

@@ -1,12 +1,15 @@
 import VueRouter from 'vue-router'
-import ProductContent from '../components/content/ProductContent.vue'
-import MemberContent from '../components/content/MemberContent.vue'
+import {ProductContent} from '../components/content'
+import {MemberContent} from '../components/content'
 import ProductRoutes from './ProductRoutes.js'
 import MemberRoutes from './MemberRoutes.js'
-import CustomerServicePage from '../components/pages/CustomerServicePage.vue'
+import {CustomerServicePage} from '../components/pages/'
+//import ProductListPage from '../components/content/pages/product/ProductListPage.vue'
 
 const routes = [
-    { path: '/', component: ProductContent,
+
+    { path: '/', redirect: '/product'},
+    { path: '/product', component: ProductContent,
         children: ProductRoutes
     },
     { path: '/member', component: MemberContent,

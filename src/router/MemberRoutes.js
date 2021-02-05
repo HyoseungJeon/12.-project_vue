@@ -1,7 +1,7 @@
-import SignUpPage from '../components/content/pages/member/SignUpPage.vue'
-import MemberCartPage from '../components/content/pages/member/MemberCartPage.vue'
-import MemberInfoPage from '../components/content/pages/member/MemberInfoPage.vue'
-import SignInPage from '../components/content/pages/member/SignInPage.vue'
+import {SignUpPage} from '../components/content/pages/member/'
+import {MemberCartPage} from '../components/content/pages/member/'
+import {MemberInfoPage} from '../components/content/pages/member/'
+import {SignInPage} from '../components/content/pages/member/'
 
 const MemberRoutes = [
     { path: '', component: SignUpPage },
