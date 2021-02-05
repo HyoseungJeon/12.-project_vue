@@ -6,6 +6,8 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import 'semantic-ui-css/semantic.min.css';
 import VueSession from 'vue-session' 
+import VueRouter from 'vue-router'
+import router from './router'
 
 var Sessionoptions = {
   persist: true
@@ -15,7 +17,9 @@ Vue.config.productionTip = false
 Vue.use(SuiVue);
 Vue.use(BootstrapVue);
 Vue.use(VueSession,Sessionoptions)
+Vue.use(VueRouter)
 
 new Vue({
   render: h => h(App),
+  router
 }).$mount('#app')

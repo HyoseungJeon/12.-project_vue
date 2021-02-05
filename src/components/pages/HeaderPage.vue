@@ -2,11 +2,12 @@
   <div>
     <div id="menu_form">
       <a id="icon_form" @click="handelClickMenu('signIn')"> 로그인</a>
-      <a id="icon_form"> 회원가입</a>
-      <a id="icon_form"> 고객센터</a>
+      <a id="icon_form" @click="handelClickMenu('signUp')"> 회원가입</a>
+      <a id="icon_form" @click="handelClickMenu('custmer-service')"> 고객센터</a>
     </div>
     <div id="header_form">
-      <img src='@/assets/images/H_icon.png' width="80" height="80">
+      <img src='@/assets/images/H_icon.png' width="80" height="80"
+      @click="handelClickMenu('home')">
       <div id=search_form class="ui left icon action input" >
         <i class="search icon"></i>
         <input type="text" placeholder=" 찾고 싶은 상품명을 입력해주세요!" />
@@ -14,8 +15,10 @@
       </div>
       <!-- <img src='@/assets/images/icon_cart.png' width="50" height="40">
       <img src='@/assets/images/icon_myinfo.png' width="50" height="40"> -->
-      <sui-icon id="icon_form" size="big" name="shopping cart icon" />
-      <sui-icon id="icon_form" size="big" name="user icon" />
+      <sui-icon id="icon_form" size="big" name="shopping cart icon"
+        @click="handelClickMenu('member-cart')"/>
+      <sui-icon id="icon_form" size="big" name="user icon" 
+        @click="handelClickMenu('member-info')"/>
     </div>
   </div>
   
