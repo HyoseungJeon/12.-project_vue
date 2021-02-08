@@ -23,8 +23,8 @@ class AxiosClient {
         return this.client.put(this.baseUrl + url, data)
     }
 
-    async delete(url) {
-        return this.client.delete(this.baseUrl + url);
+    async delete(url, params) {
+        return this.client.delete(this.baseUrl + url, {params: params});
     }
 }
 

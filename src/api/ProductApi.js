@@ -2,11 +2,15 @@ import AxiosClient from "./AxiosClient";
 
 class ProductApi {
     constructor(){
-        this.client = new AxiosClient('/api/order');
+        this.client = new AxiosClient('/product');
     }
 
-    async register(member) {
-        return this.client.post('/register', member);
+    async register(product) {
+        return this.client.post('/register', product);
+    }
+
+    async delete(product_id){
+        return (await this.client.delete('/remove', {productId : product_id})).data;
     }
 
     async findClub(clubId) {

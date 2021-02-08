@@ -90,14 +90,20 @@ export default {
     data:function(){
         return {
             memberObj:{
-                member_id:'',
+                member_id:'test1',
                 password :'',
                 password2 :'',
                 name : '',
                 email : '',
                 address : '',
             },
-            modifyStatus : false
+            originMemberObj : { //나중에 prop로 content에서 받음
+                member_id:'test1',
+                password :'',
+                password2 :'',
+                name : '',
+                email : '',
+                address : '',},
         }
     },
     props:{
@@ -107,19 +113,25 @@ export default {
         nameCheck : Boolean,
         emailCheck : Boolean,
         addressCheck : Boolean,
+        modifyStatus : Boolean,
     },
     methods:{
         handelClickMenu:function(menuName){
             this.$emit('onClickMenu',menuName, this.memberObj)
         },
         onClickToggle:function(){
-            this.modifyStatus = !this.modifyStatus;
+            this.$emit('onClickMenu','modify_toogle')
+            console.log("memberObj : " + this.memberObj.password)
+            console.log("originMemberObj : " + this.originMemberObj.password)
+
+            if(this.modifyStatus){ //그냥 obj를 넣으면 v-model로 같이 잡혀서 값이 변경됨
+                this.memberObj.password = this.originMemberObj.password
+                this.memberObj.password2 = this.originMemberObj.password2
+                this.memberObj.name = this.originMemberObj.name
+                this.memberObj.email = this.originMemberObj.email
+                this.memberObj.address = this.originMemberObj.address
+            }
         },
-    },
-    computed:{
-        trigeer(){
-            return this.modifyStatus
-        }
     },
     watch:{
         "memberObj.member_id":function(){

@@ -2,16 +2,20 @@ import AxiosClient from "./AxiosClient";
 
 class MemberApi {
     constructor(){
-        this.client = new AxiosClient('/api/member');
+        this.client = new AxiosClient('/member');
     }
 
     async register(member) {
         return this.client.post('/register', member);
     }
 
-    async findClub(clubId) {
-        const data = (await this.client.get('/find', {clubId: clubId})).data;
+    async find(memberId) {
+        const data = (await this.client.get('/find', {memberId: memberId})).data;
         return data;
+    }
+
+    async modify(member){
+        return this.client.put('/update', member);
     }
 
     async findClubByNameLike(name) {

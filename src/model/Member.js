@@ -1,13 +1,13 @@
 
 class Member {
-    constructor(member_id, name, password, email, join_date, address, auth){
+    constructor(member_id, name, password, email, address){
         this.member_id = member_id;
         this.name = name;
         this.password = password;
         this.email = email;
-        this.join_date = join_date;
+        this.join_date = '';
         this.address = address;
-        this.auth = auth;
+        this.auth = '';
     }
 
     // memberObj:{
@@ -18,7 +18,15 @@ class Member {
     //     email : '',
     //     address : '',
     // }
-
+    toMember(memberObj){
+        return Member(
+            memberObj.member_id,
+            memberObj.name,
+            memberObj.password,
+            memberObj.email,
+            memberObj.address,
+        );
+    }
 }
 
 export default Member;

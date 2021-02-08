@@ -1,6 +1,6 @@
 <template>
   <div>
-      <router-view id="content-form"></router-view>
+      <router-view id="content-form" ></router-view>
   </div>
 </template>
 

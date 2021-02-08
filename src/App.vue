@@ -18,6 +18,10 @@ import {Footer} from './components'
 
 export default {
   name: 'App',
+  data : function(){
+    return{
+    }
+  },
   components:{
     Header,
     Content,

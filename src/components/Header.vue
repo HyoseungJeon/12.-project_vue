@@ -21,6 +21,16 @@ export default {
       }
     }
   },
+  computed:{
+    memberId:{
+      get (){
+        return this.$store.state.memberId;
+      },
+      set (value){
+        this.$store.commit('setMemberId',value);
+      }
+    }
+  },
   methods:{
     handelClickMenu:function(menuName){
       switch(menuName){
@@ -28,10 +38,13 @@ export default {
           this.$router.push({name : 'home'})
           break;
         case 'signIn':
-          // this.propsObj.signInModalState = !this.propsObj.signInModalState;
-          // console.log(this.propsObj.signInModalState)
           this.$router.push({name : 'member-sign-in'})
           break;
+        case 'signOut':{
+          this.$store.commit('setMemberId','');
+          console.log(this.$store.state.memberId);
+          break;
+        }
         case 'signUp':
           this.$router.push({name : 'member-sign-up'})
           break;
@@ -43,6 +56,12 @@ export default {
           break;
         case 'member-info':
           this.$router.push({name : 'member-info'})
+          break;
+        case 'member-orderlist':
+          this.$router.push({name : 'member-order-list'})
+          break;
+        case 'member-sell':
+          this.$router.push({name : 'member-product-list'})
           break;
         case 'product-search':
           //prop로 검색어 전달

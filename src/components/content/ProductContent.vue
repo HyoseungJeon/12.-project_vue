@@ -1,6 +1,6 @@
 <template>
   <div>
-      <router-view @handleClickEvent="handelClickMenu"></router-view>
+      <router-view @handleClickEvent="handelClickMenu" ></router-view>
   </div>
 </template>
 

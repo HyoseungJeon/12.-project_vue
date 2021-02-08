@@ -7,7 +7,8 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 import 'semantic-ui-css/semantic.min.css';
 import VueSession from 'vue-session' 
 import VueRouter from 'vue-router'
-import router from './router'
+import router from './router/'
+import store from './store/'
 
 var Sessionoptions = {
   persist: true
@@ -21,5 +22,6 @@ Vue.use(VueRouter)
 
 new Vue({
   render: h => h(App),
-  router
+  router,
+  store,
 }).$mount('#app')

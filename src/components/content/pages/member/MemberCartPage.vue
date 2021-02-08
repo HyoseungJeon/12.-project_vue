@@ -19,6 +19,4 @@ export default {
 </script>
 
 <style>
-    #testform{
-    }
 </style>

@@ -1,5 +1,7 @@
 <template>
-  <div id='order_list_form'>
+  <div>
+    <b-button id='b-button' variant="primary" size="lg" @click="handleClickMenu('sell_product')">등록하기</b-button>
+      <div id='order_list_form'>
       <sui-item-group divided>
     <sui-item>
       <img src='@/assets/images/defalut_image.png' width="300" height="300">
@@ -13,28 +15,26 @@
           </p>
         </sui-item-description>
       </sui-item-content>
+      <b-button id='b-button' variant="" size="lg" @click="handleClickMenu('delete_product','product_id')">삭제</b-button>
     </sui-item>
     <sui-divider/>
   </sui-item-group>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
-    data:function(){
-        return{
-            orderIdList:[],
+    methods:{
+        handleClickMenu(menuName){
+            this.$emit('onClickMenu',menuName)
         }
-    },
+    }
 }
 </script>
 
 <style>
     #order_list_form{
         padding: 50px;
-    }
-    #order_list_content_form{
-        padding-left: 50px;
-        padding-right: 50px;
     }
 </style>

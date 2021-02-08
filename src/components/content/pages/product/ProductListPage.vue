@@ -11,7 +11,7 @@
           >
             <div>
             <!-- <sui-image id='sui_image_form' src="static/images/wireframes/image.png" /> -->
-            <img src='@/assets/images/item_1.png' width="339" height="339">
+            <img src='@/assets/images/defalut_image.png' width="339" height="339">
             </div>
             <sui-card-content>
               <h4 id='product_name_form'>{{product.product_name}}</h4>
@@ -33,7 +33,7 @@ import ProductPageNavPage from './ProductPageNavPage.vue'
 export default {
   components: { ProductNavPage, ProductPageNavPage, ProductAdPage },
     name:'product-list-page',
-    mounted:{
+    mounted:function()  {
       //router에서 검색어 입력받음, 해당 값 기준으로 검색 후 리스트를 set 없으면 초기값 list set
     },
     data: function(){

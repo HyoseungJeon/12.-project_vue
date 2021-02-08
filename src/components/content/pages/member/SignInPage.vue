@@ -33,11 +33,15 @@
                 <sui-checkbox label="아이디 저장" />
             </sui-form-field>
             </b-form-group>
-            <sui-button id='#b-button' fluid primary>
+            <sui-button fluid primary
+            @click="handelClickMenu('sign_in_try')"
+            >
                 로그인
             </sui-button>
             <sui-divider />
-            <sui-button id='#b-button' fluid >
+            <sui-button fluid
+            @click="handelClickMenu('sign_up')"
+            >
                 회원가입
             </sui-button>
         </form>

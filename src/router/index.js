@@ -1,14 +1,13 @@
 import VueRouter from 'vue-router'
-import {ProductContent} from '../components/content'
-import {MemberContent} from '../components/content'
+import {ProductContent} from '../components/content/'
+import {MemberContent} from '../components/content/'
 import ProductRoutes from './ProductRoutes.js'
 import MemberRoutes from './MemberRoutes.js'
 import {CustomerServicePage} from '../components/pages/'
-//import ProductListPage from '../components/content/pages/product/ProductListPage.vue'
 
 const routes = [
 
-    { path: '/', redirect: '/product'},
+    { path: '/', redirect: '/product', name : 'index'},
     { path: '/product', component: ProductContent,
         children: ProductRoutes
     },
@@ -19,5 +18,6 @@ const routes = [
 ];
 
 export default new VueRouter({
+    //mode: 'history',
     routes:routes // `routes: routes`의 줄임
 })

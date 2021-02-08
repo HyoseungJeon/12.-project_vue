@@ -1,7 +1,8 @@
 <template>
   <div>
     <div id="menu_form">
-      <a id="icon_form" @click="handelClickMenu('signIn')"> 로그인</a>
+      <a id="icon_form" v-show="!isLoggined"  @click="handelClickMenu('signIn')"> 로그인</a>
+      <a id="icon_form" v-show="isLoggined"  @click="handelClickMenu('signOut')"> 로그아웃</a>
       <a id="icon_form" @click="handelClickMenu('signUp')"> 회원가입</a>
       <a id="icon_form" @click="handelClickMenu('custmer-service')"> 고객센터</a>
     </div>
@@ -21,6 +22,10 @@
         @click="handelClickMenu('member-cart')"/>
       <sui-icon id="icon_form" size="big" name="user icon" 
         @click="handelClickMenu('member-info')"/>
+        <sui-icon id="icon_form" size="big" name="clipboard" 
+        @click="handelClickMenu('member-orderlist')"/>
+        <sui-icon id="icon_form" size="big" name="dollar sign" 
+        @click="handelClickMenu('member-sell')"/>
     </div>
   </div>
   
@@ -34,7 +39,21 @@ export default {
         handelClickMenu:function(menuName){
           this.$emit('onClickMenu',menuName)
         }
+    },
+    computed:{
+      isLoggined(){
+        return this.memberId === '' ? false : true;
+      },
+      memberId:{
+      get (){
+        return this.$store.state.memberId;
+      },
+      set (value){
+        this.$store.commit('setMemberId',value);
+      }
     }
+    },
+    
 }
 </script>
 
