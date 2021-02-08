@@ -18,8 +18,8 @@ class Member {
     //     email : '',
     //     address : '',
     // }
-    toMember(memberObj){
-        return Member(
+    static toMember(memberObj){
+        return new Member(
             memberObj.member_id,
             memberObj.name,
             memberObj.password,

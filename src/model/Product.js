@@ -11,8 +11,8 @@ class Product {
         this.upload_date = '';
     }
 
-    toProduct(productObj){
-        return Product(
+    static toProduct(productObj){
+        return new Product(
             productObj.member_id,
             productObj.product_name,
             productObj.product_intro,

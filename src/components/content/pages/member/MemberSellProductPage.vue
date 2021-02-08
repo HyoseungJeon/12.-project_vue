@@ -48,7 +48,7 @@ export default {
   },
   methods:{
     handleClickMenu(menuName){
-      if(menuName === 'sell_product'){
+      if(menuName === 'sell_product_try'){
         this.$emit('onClickMenu',menuName,this.productObj)
       }
     }

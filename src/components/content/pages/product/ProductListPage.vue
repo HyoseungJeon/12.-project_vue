@@ -30,11 +30,13 @@
 import ProductAdPage from './ProductAdPage.vue'
 import ProductNavPage from './ProductNavPage.vue'
 import ProductPageNavPage from './ProductPageNavPage.vue'
+import {ProductApi} from '~/api'
 export default {
   components: { ProductNavPage, ProductPageNavPage, ProductAdPage },
     name:'product-list-page',
-    mounted:function()  {
+    mounted:async function()  {
       //router에서 검색어 입력받음, 해당 값 기준으로 검색 후 리스트를 set 없으면 초기값 list set
+      this.productList = await ProductApi.findProductByNameLike('');
     },
     data: function(){
       return{
@@ -42,18 +44,7 @@ export default {
           categorie : ''
         },
         productList:[
-          {
-            product_id : '1',
-            product_name : 'test1',
-            price : '15000',
-            imageUrl : 'http~~'
-          },
-          {
-            product_id : '2',
-            product_name : 'test2',
-            price : '2000',
-            imageUrl : 'http~~'
-          },
+          
         ],
       }
     },

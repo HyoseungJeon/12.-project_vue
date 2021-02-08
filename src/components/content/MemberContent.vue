@@ -25,7 +25,6 @@ export default {
           addressCheck : null,
           modifyStatus : false,
         },
-        member : new Member(),
       }
     },
   methods:{
@@ -38,21 +37,20 @@ export default {
 
         case 'sign-up-try':{
           let memberObj = par1;
-          let status = this.memberCheckUp(memberObj)          
-          this.member = this.member.toMember(memberObj)
+          let status = this.memberCheckUp(memberObj)
           if(status){
-            await MemberApi.register(this.member)
+            let member = Member.toMember(memberObj);
+            await MemberApi.register(member)
             this.$router.push({name : 'home'})
           }
           break;
         }
         case 'modify-try':{
           let memberObj = par1;
-          let status = this.memberCheckUp(memberObj) 
-          
-          this.member = this.member.toMember(memberObj)
+          let status = this.memberCheckUp(memberObj)           
           if(status){
-            await MemberApi.modify(this.member)
+            let member = Member.toMember(memberObj);
+            await MemberApi.modify(member)
             this.signUpStatus.modifyStatus = false;
             console.log(this.signUpStatus.modifyStatus)
           }
@@ -84,34 +82,30 @@ export default {
           }
           break;
         }
-
         case 'sell_product':{
           this.$router.push({name : 'member-sell-product'})
           break;
         }
-
         case 'delete_product' :{
-          //let product_id = par1;
-          let product_id = 4;
+          let product_id = par1;
           await ProductApi.delete(product_id);
           this.$router.go({name : 'member-product-list'})
           break;
         }
-
         case 'sell_product_try':{
           let productObj = par1;
-          productObj.member_id = 'test1'
-          let product = new Product().toProduct(productObj)
+          productObj.member_id = this.$store.state.memberId;
+          console.log("visited here?")
+          let product = Product.toProduct(productObj);
+          console.log("visited here?")
           await ProductApi.register(product);
           this.$router.push({name : 'home'})
           break;
         }
-
         case 'modify_toogle' :{
           this.signUpStatus.modifyStatus = !this.signUpStatus.modifyStatus;
           break;
         }
-
         case 'sign_in_try' :{
           let memberObj = par1;
           this.$store.commit('setMemberId',memberObj.member_id);

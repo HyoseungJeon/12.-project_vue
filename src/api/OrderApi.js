@@ -2,7 +2,7 @@ import AxiosClient from "./AxiosClient";
 
 class OrderApi {
     constructor(){
-        this.client = new AxiosClient('/api/order');
+        this.client = new AxiosClient('/order');
     }
 
     async register(member) {

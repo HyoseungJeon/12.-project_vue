@@ -17,5 +17,6 @@ export default new Vuex.Store({
         getMemberId(state){
             return state.memberId;
         }
-    }
+    },
+    
 })

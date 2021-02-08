@@ -13,13 +13,18 @@ class ProductApi {
         return (await this.client.delete('/remove', {productId : product_id})).data;
     }
 
+    async findProductByMemberId(member_id){
+        const data = (await this.client.get('/find-by-memberid', {memberId : member_id})).data;
+        return data;
+    }
+
     async findClub(clubId) {
         const data = (await this.client.get('/find', {clubId: clubId})).data;
         return data;
     }
 
-    async findClubByNameLike(name) {
-        const data = (await this.client.get('/findByNameLike', {name: name})).data;
+    async findProductByNameLike(name) {
+        const data = (await this.client.get('/find-by-name', {productName: name})).data;
         return data;
     }
 
