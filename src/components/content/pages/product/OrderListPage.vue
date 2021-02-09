@@ -1,15 +1,15 @@
 <template>
   <div id='order_list_form'>
       <sui-item-group divided>
-    <sui-item>
+    <sui-item v-for="(order,index) in orderList" v-bind:key="index">
       <img src='@/assets/images/defalut_image.png' width="300" height="300">
       <sui-item-content id="order_list_content_form">
-          <h2>상품명</h2>
-          <h4>가격</h4>
-          <h4>상품 개수</h4>
+          <h2>{{order.product.product_name}}</h2>
+          <h4>{{order.product.price}}</h4>
+          <h4>{{order.count}}</h4>
         <sui-item-description>
           <p>
-            상품 설명
+            {{order.product.product_intro}}
           </p>
         </sui-item-description>
       </sui-item-content>
@@ -21,11 +21,9 @@
 
 <script>
 export default {
-    data:function(){
-        return{
-            orderIdList:[],
-        }
-    },
+    props:{
+      orderList:[]
+    }
 }
 </script>
 

@@ -29,6 +29,7 @@ export default {
     },
   methods:{
     handelClickMenu:async function(menuName, par1){
+      let memberId = this.$store.getters.getMemberId
       console.log(menuName)
       switch(menuName){
         case 'home':
@@ -94,10 +95,9 @@ export default {
         }
         case 'sell_product_try':{
           let productObj = par1;
-          productObj.member_id = this.$store.state.memberId;
+          productObj.member_id = memberId;
           console.log("visited here?")
           let product = Product.toProduct(productObj);
-          console.log("visited here?")
           await ProductApi.register(product);
           this.$router.push({name : 'home'})
           break;
@@ -109,7 +109,7 @@ export default {
         case 'sign_in_try' :{
           let memberObj = par1;
           this.$store.commit('setMemberId',memberObj.member_id);
-          console.log(this.$store.state.memberId);
+          console.log("Created Member_id Session : " + this.$store.state.memberId)
           this.$router.push({name : 'index'})
           break;
         }

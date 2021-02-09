@@ -3,7 +3,7 @@
       <product-ad-page/>
       <div>
         <product-nav-page @onClickCategorie="handleClickCategorie" v-bind="productCategorie"/>
-
+        <h2 id="product_empty_h2" v-show="isEmptyList">! 등록된 상품이 없습니다 !</h2>
         <div id='product_list_form'>
         <sui-card-group :items-per-row="4">
           <sui-card v-for="(product,index) in productList" v-bind:key="index"
@@ -56,6 +56,11 @@ export default {
       onClickProduct:function(menuName, product_id){
         this.$emit('handleClickEvent',menuName, product_id)
       }
+    },
+    computed:{
+      isEmptyList:function(){
+        return this.productList.length === 0 ? true : false;
+      }
     }
 }
 </script>
@@ -79,6 +84,10 @@ export default {
   #product_name_form{
     font-weight: bold;
     color: black;
+  }
+
+  #product_empty_h2{
+    text-align: center;
   }
 
 </style>

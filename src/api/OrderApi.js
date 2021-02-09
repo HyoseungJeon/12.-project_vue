@@ -5,8 +5,8 @@ class OrderApi {
         this.client = new AxiosClient('/order');
     }
 
-    async register(member) {
-        return this.client.post('/register', member);
+    async register(order) {
+        return this.client.post('/register', order);
     }
 
     async findClub(clubId) {
@@ -14,8 +14,8 @@ class OrderApi {
         return data;
     }
 
-    async findClubByNameLike(name) {
-        const data = (await this.client.get('/findByNameLike', {name: name})).data;
+    async findByMemberIdAndState(memberId, state) {
+        const data = (await this.client.get('/find-by-memberid-and-state', {memberId: memberId, state: state})).data;
         return data;
     }
 

@@ -24,7 +24,7 @@ export default {
   computed:{
     memberId:{
       get (){
-        return this.$store.state.memberId;
+        return this.$store.state.memberid;
       },
       set (value){
         this.$store.commit('setMemberId',value);
@@ -41,8 +41,8 @@ export default {
           this.$router.push({name : 'member-sign-in'})
           break;
         case 'signOut':{
-          this.$store.commit('setMemberId','');
-          console.log(this.$store.state.memberId);
+          this.$store.commit('destoryMemberid');
+          console.log("Destoryed Member_id Session")
           break;
         }
         case 'signUp':

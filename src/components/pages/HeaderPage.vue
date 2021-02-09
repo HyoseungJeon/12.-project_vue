@@ -44,14 +44,11 @@ export default {
       isLoggined(){
         return this.memberId === '' ? false : true;
       },
-      memberId:{
-      get (){
-        return this.$store.state.memberId;
-      },
-      set (value){
-        this.$store.commit('setMemberId',value);
+      memberId :{
+        get (){
+          return this.$store.state.memberId
+        }
       }
-    }
     },
     
 }
